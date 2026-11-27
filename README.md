@@ -1,1 +1,461 @@
 # my-website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walia Priyanka K | Accounting & Finance</title>
+  <meta name="description" content="Personal portfolio of Walia Priyanka K, HKU Accounting and Finance graduate.">
+
+  <style>
+    :root {
+      --primary: #1f5ea8;
+      --primary-dark: #174675;
+      --accent: #eaf2fb;
+      --text: #243447;
+      --muted: #66758a;
+      --border: #dde5ed;
+      --background: #f7f9fc;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 32px auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(35, 62, 89, 0.08);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+    }
+
+    .sidebar {
+      padding: 36px 28px;
+      background: #fbfdff;
+      border-right: 1px solid var(--border);
+    }
+
+    .profile-mark {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--primary);
+      font-size: 38px;
+      font-weight: 700;
+    }
+
+    .sidebar h2 {
+      margin: 0 0 8px;
+      text-align: center;
+      font-size: 21px;
+    }
+
+    .sidebar .education {
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .contact-links {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
+      font-size: 14px;
+    }
+
+    .contact-links li {
+      margin: 8px 0;
+    }
+
+    .content {
+      padding: 42px 48px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      color: #1d2f43;
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    .tagline {
+      max-width: 720px;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 24px;
+    }
+
+    .tag {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 9px 16px;
+      border: 1px solid var(--primary);
+      border-radius: 7px;
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--primary);
+    }
+
+    section {
+      margin-top: 32px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      color: #365a82;
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .entry h3 {
+      margin: 0 0 4px;
+      color: #1e3145;
+      font-size: 17px;
+    }
+
+    .entry .date {
+      color: var(--muted);
+      white-space: nowrap;
+      font-size: 13px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .placeholder-note {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 3px 8px;
+      border-radius: 5px;
+      background: #fff4d6;
+      color: #806000;
+      font-size: 12px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .project {
+      min-height: 230px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: #fcfdff;
+    }
+
+    .project h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .project p {
+      margin: 8px 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      row-gap: 8px;
+    }
+
+    .skills-grid strong {
+      color: #365a82;
+    }
+
+    .footer {
+      padding: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .content {
+        padding: 30px 24px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .entry {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="container">
+      <aside class="sidebar">
+        <div class="profile-mark">WP</div>
+        <h2>Walia Priyanka K</h2>
+        <p class="education">
+          Accounting &amp; Finance<br>
+          The University of Hong Kong<br>
+          Graduating Winter 2026
+        </p>
+
+        <ul class="contact-links">
+          <li>
+            <a href="https://www.linkedin.com/in/priyanka-k-w" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+          </li>
+          <li><a href="#" aria-label="Add GitHub profile">GitHub</a></li>
+          <li><a href="#" aria-label="Add email address">Email</a></li>
+          <li><a href="#" aria-label="Add résumé PDF">Résumé (PDF)</a></li>
+        </ul>
+      </aside>
+
+      <div class="content">
+        <header>
+          <h1>Hi, I'm Walia Priyanka K.</h1>
+          <p class="tagline">
+            Accounting and Finance graduate from HKU with six years of teaching experience,
+            a strong analytical mindset, and interest in using data to explain financial decisions.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Accounting</span>
+            <span class="tag">Finance</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+
+          <div class="actions">
+            <a class="button" href="#" aria-label="Add résumé PDF">Download Résumé</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/priyanka-k-w" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+            <a class="button secondary" href="#" aria-label="Add email address">Email Me</a>
+          </div>
+        </header>
+
+        <section>
+          <h2>Experience</h2>
+          <div class="entry">
+            <div>
+              <span class="placeholder-note">Polished placeholder — edit later</span>
+              <h3>Educator | [Organisation Name]</h3>
+              <ul>
+                <li>Designed and delivered engaging lessons for diverse groups of learners.</li>
+                <li>Adapted teaching methods to support individual learning needs and objectives.</li>
+                <li>Demonstrated six years of communication, planning, and people-management experience.</li>
+              </ul>
+            </div>
+            <span class="date">[Start] – [End]</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Projects</h2>
+          <div class="projects">
+            <article class="project">
+              <span class="placeholder-note">Placeholder</span>
+              <h3>R Studio Weekly Project Series</h3>
+              <p>
+                Applied R to explore datasets, test ideas, and communicate analytical findings
+                through clear visualisations and reproducible reports.
+              </p>
+              <p><strong>Tools:</strong> R Studio, data visualisation</p>
+              <p><strong>Finding:</strong> [Insert the key insight from your weekly work.]</p>
+              <p>
+                <a href="#">View project</a> &nbsp;·&nbsp;
+                <a href="#">Code on GitHub</a>
+              </p>
+            </article>
+
+            <article class="project">
+              <span class="placeholder-note">Placeholder</span>
+              <h3>R Studio Final Project</h3>
+              <p>
+                Developed an end-to-end R analysis addressing a clearly defined
+                research question and presenting findings through visual storytelling.
+              </p>
+              <p><strong>Tools:</strong> R, R Markdown, statistical analysis</p>
+              <p><strong>Finding:</strong> [Insert the principal conclusion.]</p>
+              <p>
+                <a href="#">View report</a> &nbsp;·&nbsp;
+                <a href="#">Code on GitHub</a>
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Activities &amp; Societies</h2>
+
+          <div class="entry">
+            <div>
+              <h3>Peer English Tutor</h3>
+              <p>[Describe your tutoring role, responsibilities, and impact.]</p>
+            </div>
+            <span class="date">[Dates]</span>
+          </div>
+
+          <div class="entry">
+            <div>
+              <h3>Peer Impact Network (PIN)</h3>
+              <p>[Describe your contribution to the network and its initiatives.]</p>
+            </div>
+            <span class="date">[Dates]</span>
+          </div>
+
+          <div class="entry">
+            <div>
+              <h3>HKU Glocal Connector</h3>
+              <p>[Describe your role supporting local or global engagement.]</p>
+            </div>
+            <span class="date">[Dates]</span>
+          </div>
+
+          <div class="entry">
+            <div>
+              <h3>Ask Me Anything Counter</h3>
+              <p>[Describe the community or student support you provided.]</p>
+            </div>
+            <span class="date">[Dates]</span>
+          </div>
+
+          <div class="entry">
+            <div>
+              <h3>Student Induction Instructor</h3>
+              <p>[Describe the programme, audience, and your responsibilities.]</p>
+            </div>
+            <span class="date">[Dates]</span>
+          </div>
+
+          <div class="entry">
+            <div>
+              <h3>CEDARS Student Host</h3>
+              <p>[Describe how you welcomed, guided, or supported students.]</p>
+            </div>
+            <span class="date">[Dates]</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Skills</h2>
+          <div class="skills-grid">
+            <strong>Data analysis</strong>
+            <span>R Studio, Excel</span>
+            <strong>Visualisation</strong>
+            <span>Power BI, Tableau</span>
+            <strong>Transferable</strong>
+            <span>Teaching, communication, mentoring, presentation</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Contact</h2>
+          <p>
+            I am open to opportunities in accounting, finance, data analysis,
+            and related fields.
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/priyanka-k-w" target="_blank" rel="noopener">
+              Connect with me on LinkedIn
+            </a>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer">
+      © 2026 Walia Priyanka K · Built with GitHub Pages
+    </footer>
+  </main>
+</body>
+</html>
